@@ -1,18 +1,18 @@
 ---
-import letter_colors from "../data/letter_colors.json"
+import letter_colors from "../data/letter_colors.json";
 
-const gestor = letter_colors
+const gestor = letter_colors;
 ---
 
 <header class="w-full text-[14px] fixed z-10 shadow-google">
 	<nav class="flex h-[64px] items-center py-3 pr-3 pl-6">
-		<a href="/" class="text-2xl font-normal	text-[#5f6368]">
+		<a href="/" class="text-2xl font-normal">
 			{
 				gestor.map((g) => (
-					<span class={"text-[" + g.color + "]"}>{g.letter}</span>
+					<span style={"color:" + g.color}>{g.letter}</span>
 				))
 			}
-			João
+			<span class="text-[#5f6368]">João</span>
 		</a>
 
 		<div class="flex gap-x-9 ml-9 grow h-full items-center">
@@ -23,7 +23,11 @@ const gestor = letter_colors
 			>
 		</div>
 
-		<a href="/" class="h-full border-[#dadce0] border-[1px] rounded-[4px] font-medium text-[#1a73e8] px-[27px] inline-flex items-center justify-center">Entre em contato</a>
+		<a
+			href="/"
+			class="h-full border-[#dadce0] border-[1px] rounded-[4px] font-medium text-[#1a73e8] px-[27px] inline-flex items-center justify-center"
+			>Entre em contato</a
+		>
 	</nav>
 </header>
 
