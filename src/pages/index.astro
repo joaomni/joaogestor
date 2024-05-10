@@ -1,26 +1,73 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Home from "../components/Home.astro";
 ---
 
 <Layout title="João Paulo Moreira">
-	<Header></Header>
+	<Header />
+	<Home />
+	<section
+		class="flex h-auto flex-col justify-center gap-16 items-center mt-36 leading-5 md:mx-40"
+	>
+		<span
+			class="text-5xl text-[#202124] font-medium tracking-[-.5px] text-center px-10"
+			>Fique em destaque de várias formas com anúncios on-line</span
+		>
 
-	<main class="my-[80px]">
-		<div>
-			<div>
-				<h2>Aumente as vendas</h2>
+		<main class="">
+			<div
+				class="relative bg-cover w-[500px] h-[635px] bg-center bg-no-repeat bg-[url('https://lh3.googleusercontent.com/30ZEDpJR5OyQ4WX0xvRdbEUvzpXYZABLFnbRpZQvy7kdXUs9qQYeJgZUhOWyeuN_U43QBbgbGAPvyiUPLh_sBPlRHPoLSYu3rquOFRdiqUvnSB6ubw=s0-rw-v1')]"
+			>
+				<span class="absolute text-[#202124] text-sm top-[123px] left-[164px]"
+					>Dentista perto de mim</span
+				>
+				<span
+					class="absolute text-[#202124] font-medium text-lg top-[239px] left-[54px]"
+					>Anúncio
+				</span>
+				<span
+					class="absolute w-[3px] h-[3px] rounded-[50%] bg-[#3c4043] block text-[#202124] font-medium text-xl top-[252px] left-[130px]"
+				></span>
+				<span class="absolute text-[#80868b] text-sm top-[243px] left-[142px]"
+					>exemplosdenegocios.com.br</span
+				>
+				<span
+					class="absolute tracking-normal font-normal text-2xl text-[#34a853] top-[274px] left-[54px]"
+					>Dentista Vittória</span
+				>
+				<span class="absolute text-[#80868b] text-sm top-[314px] left-[56px]"
+					>Clínica Odontológica em Santos</span
+				>
 			</div>
+		</main>
+
+		<footer class="mt-24 text-center">
+			<span class="font-medium text-4xl text-[#202124]"
+				>Comece com a pesquisa</span
+			>
+			<p class="my-12 text-[#202122] text-lg px-10">
+				Ajude a aumentar as vendas, os leads ou o tráfego do site mostrando sua
+				empresa para as pessoas que estão em busca dos produtos ou serviços que
+				você oferece no Google.
+			</p>
 			
-			<div>
-				<div class="">
-					
+			<div class="grid justify-center items-center grid-flow-col gap-4">
+				<div class="bg-[#1a73e8] w-14 h-14 rounded-[50%] flex justify-center items-center">
+					<svg
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+						role="presentation"
+						class="glue-icon w-6 h-6"
+					>
+						<path fill="#fff"
+							d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+						></path></svg
+					>
 				</div>
+	
+				<span class="text-[#174ea6] cursor-pointer text-lg font-medium">Descubra os anúncios de pesquisa</span>
 			</div>
-			
-			<div>
-				<p>com o Google Ads</p>
-			</div>
-		</div>
-	</main>
+		</footer>
+	</section>
 </Layout>
