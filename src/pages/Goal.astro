@@ -1,0 +1,28 @@
+---
+import Card from "../components/Card.astro";
+
+import goal_card from "../data/goal_card.json"
+
+const goal = goal_card
+---
+
+<section class="lg:mx-40 sm:mx-7 mt-36 flex flex-col items-center gap-8">
+  <span class="text-[#202124] font-medium text-4xl px-10">Alcance todas as suas metas com um só profissional</span>
+  
+  <a
+    href="/"
+    class="h-full sm:text-base text-lg border-[#dadce0] border-[1px] rounded-[4px] min-w-24 min-h-12 max-w-96 tracking-[-.5px] font-medium text-[#1a73e8] py-3 px-7 inline-flex items-center justify-center"
+    >Saiba mais</a
+  >
+
+  <div class="flex sm:flex-row flex-col items-center sm:flex-wrap justify-center sm:mx-7 mx-5">
+    {goal.map((g) => (
+    <Card 
+      src={g.image}
+      title={g.title}
+      text={g.text}
+    />
+    ))}
+  </div>
+
+</section>

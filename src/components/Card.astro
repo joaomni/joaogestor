@@ -1,0 +1,13 @@
+---
+const { src } = Astro.props
+const { title } = Astro.props
+const { text } = Astro.props
+---
+
+<div class="flex sm:flex-col flex-row sm:justify-center gap-4 sm:items-center px-6 sm:pt-9 pt-4 md:w-[calc(33%-9px)] w-full sm:text-center text-left">
+  <img  class="sm:w-[100px] w-[58px] sm:h-[100px] h-[58px]" src={src} alt="Icone de meta">
+  <div>
+    <h2 class="text-[#202124] sm:text-[1.35rem] text-xl leading-[1.4] w-auto">{title}</h2>
+    <p class="text-[#5f6368] w-auto sm:text-lg text-base leading-[1.5] sm:pt-0 pt-2">{text}</p>
+  </div>
+</div>
