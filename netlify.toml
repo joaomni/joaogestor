@@ -5,4 +5,4 @@
   publish = "public"
 
   # Default build command.
-  command = "npm run build && npm run preview"
+  command = "npm run build && npm run preview --host"
