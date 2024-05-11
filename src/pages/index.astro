@@ -3,7 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Home from "./Home.astro";
 import Search from "./Search.astro";
-import Goal from "./Goal.astro"
+import Goal from "./Goal.astro";
+import Power from "../components/Power.astro";
+
+import power_card from "../data/power_card.json"
+
+const power = power_card
 ---
 
 <Layout title="João Paulo Moreira">
@@ -12,7 +17,19 @@ import Goal from "./Goal.astro"
 	<Search />
 	<Goal />
 
-	<section class="mt-28 h-auto w-full">
-		<span class="font-medium text-5xl text-[#202124] mb-12">O poder do Google <p class="text-[#1a73e8]">para sua empresa</p></span>
+	<section class="mt-28 mx-20 h-auto">
+		<span class="font-medium text-5xl text-[#202124]"
+			>O poder do Google <p class="text-[#1a73e8]">para sua empresa</p></span
+		>
+
+		<div class="mt-12 flex flex-col items-center justify-center">
+			{power.map((g) => (
+				<Power 
+					src={g.image}
+					title={g.title}
+					text={g.text}
+				/>
+			))}
+		</div>
 	</section>
 </Layout>
