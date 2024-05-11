@@ -4,15 +4,15 @@ const { title } = Astro.props
 const { text } = Astro.props
 ---
 
-<div class="mb-6 text-left flex items-center justify-center">
+<div class="mb-6 sm:text-left text-center flex sm:flex-row flex-col items-center justify-center sm:border-none border-[1px] border-[#dadce0] rounded-lg sm:shadow-none shadow-card">
   <img
-    class="w-72 h-auto mr-7"
+    class="md:w-72 sm:w-52 w-ful h-auto sm:mr-7"
     src={src}
     alt="Icone de meta"
   />
 
-  <div class="flex flex-col w-1/2">
-    <span class="font-medium text-xl text-[#202124] mb-2">{title}</span>
-    <p class="text-base text-[#5f6368] w-3/4">{text}</p>
+  <div class="flex flex-col md:w-1/2 w-full">
+    <span class="font-medium text-xl text-[#202124] sm:mb-2 mb-4 sm:px-0 px-2">{title}</span>
+    <p class="text-base text-[#5f6368] sm:w-3/4 w-full sm:my-0 my-4 sm:px-0 px-4">{text}</p>
   </div>
 </div>
