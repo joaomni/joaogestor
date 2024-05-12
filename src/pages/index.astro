@@ -7,6 +7,7 @@ import Goal from "./Goal.astro";
 import Power from "../components/Power.astro";
 
 import power_card from "../data/power_card.json"
+import Button from "../components/Button.astro";
 
 const power = power_card
 ---
@@ -16,8 +17,7 @@ const power = power_card
 	<Home />
 	<Search />
 	<Goal />
-
-	<section class="mt-28 sm:mx-20 mx-7 h-auto">
+	<section class="mt-28 sm:mx-20 mx-7 h-auto relative">
 		<span class="font-medium text-5xl text-[#202124]"
 			>O poder do Google <p class="text-[#1a73e8]">para sua empresa</p></span
 		>
@@ -32,4 +32,5 @@ const power = power_card
 			))}
 		</div>
 	</section>
+	<Button />
 </Layout>

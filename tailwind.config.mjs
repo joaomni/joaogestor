@@ -8,7 +8,13 @@ export default {
       },
       boxShadow: {
         'card': '0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15)'
-      } 
+      },
+      boxShadow: {
+        'button': '0 1px 2px rgba(60,64,67,.3),0 1px 4px rgba(60,64,67,.25)'
+      },
+      backgroundImage: {
+        'goal': 'linear-gradient(180deg,rgba(241,243,244,.5),hsla(0,0%,100%,0) 34.52%)'
+      }
     }
   },
 	plugins: [],
