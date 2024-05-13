@@ -1,0 +1,23 @@
+---
+import Power from "../components/Power.astro";
+
+import power_card from "../data/power_card.json"
+
+const power = power_card
+---
+
+<section class="mt-28 sm:mx-20 mx-7 h-auto relative">
+  <span class="font-medium sm:text-5xl text-3xl text-[#202124]"
+    >O poder dos anúncios <p class="text-[#1a73e8]">para sua empresa</p></span
+  >
+
+  <div class="mt-12 flex flex-col items-center justify-center">
+    {power.map((g) => (
+      <Power 
+        src={g.image}
+        title={g.title}
+        text={g.text}
+      />
+    ))}
+  </div>
+</section>
