@@ -1,0 +1,16 @@
+---
+const { number } = Astro.props
+---
+
+<section class="lg:my-16 my-12 lg:mx-20 md:mx-10 mx-0 pt-16 flex justify-center items-center">
+  <article class="py-16 sm:px-16 px-8 md:rounded-3xl rounded-none bg-[#f8f9fa] flex flex-col justify-center items-center">
+    <span class="font-medium md:text-5xl text-3xl text-[#202124] mb-6">Podemos ajudar.</span>
+    <p class="text-xl text-[#202124]">Comece a usar nosso suporte personalizado gratuito. Crie um plano personalizado de anúncios com um especialista do Google Ads.</p>
+  
+    <a
+      href={number}
+      class="h-full mt-9 border-[#dadce0] border-[1px] rounded-[4px] text-base font-medium text-[#1a73e8] py-3 px-7 flex items-center justify-center"
+      >Agendar uma reunião</a
+    >
+  </article>
+</section>

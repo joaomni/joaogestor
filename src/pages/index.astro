@@ -1,74 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Home from "./HomePage.astro";
-import Search from "./SearchPage.astro";
-import Goal from "./GoalsPage.astro";
-import Button from "../components/Button.astro";
-import PowerPage from "./PowerPage.astro";
+import Layout from "../layouts/Layout.astro"
+import Header from "../components/Header.astro"
+import HomePage from "./HomePage.astro"
+import SearchPage from "./SearchPage.astro"
+import GoalsPage from "./GoalsPage.astro"
+import Button from "../components/Button.astro"
+import PowerPage from "./PowerPage.astro"
+import AdsPage from "./AdsPage.astro"
+import HelpPage from "./HelpPage.astro"
+
+const whatsapp = 'https://api.whatsapp.com/send?phone=5513991027026&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20an%C3%BAncios%20online.'
 ---
 
 <Layout title="João Paulo Moreira">
-  <Header />
-  <Home />
-  <Search />
-  <Goal />
+  <Header number={whatsapp} />
+  <HomePage number={whatsapp} />
+  <SearchPage number={whatsapp} />
+  <GoalsPage number={whatsapp} />
   <PowerPage />
-  <section
-    class="flex flex-col items-center justify-center font-medium mt-14S w-full h-auto bg-cover bg-center bg-[url('https://lh3.googleusercontent.com/ZTkxGkZzyDstse0IHpFjtwEO1_thCEfmo-JpgetpVWIURhUZYiRTQHl_K3Zjaxfb8v33WuGA0YWn63NRZWlA5-p-ZXMR_dZOCKMH4V4uKNYPveO_dvc=w1')]"
-  >
-    <span class="mb-6 pt-16 sm:text-5xl text-3xl text-[#202124]"
-      >O que é ter sucesso</span
-    >
-
-    <main class="xl:mx-48 mx-7">
-      <div class="lg:grid flex lg:grid-cols-2 flex-col justify-center w-full">
-        <div class="relative flex">
-          <div
-            class="w-full aspect-[100/44] h-auto bg-top bg-cover rounded-tl-3xl lg:rounded-bl-3xl lg:rounded-tr-none rounded-tr-3xl bg-[url('https://lh3.googleusercontent.com/A8Fv24dtCS3O3bN9Cu2w_IcZVd-7BQYyMcu3BCGG7OmHUFbcbEnI25wgFosFf7ZjUV9QUWq90NDd9j0t1CVwALg2mT8jPkVUI-DG5OZRKldjpE1G7nBF=w943-rw-v1')]"
-          >
-            <div
-              class="absolute lg:flex hidden  top-[315px] left-[25px] flex-col bg-white rounded-lg mx-auto max-w-52 py-5 px-7 text-[#0d652d]"
-            >
-              <span class="flex justify-center text-3xl font-medium">14%</span>
-              <p class="text-lg">de aumento de<br /> faturamento</p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white flex flex-col justify-center items-center lg:rounded-bl-none lg:rounded-tr-3xl rounded-bl-3xl rounded-br-3xl"
-        >
-          <img
-            class="mt-16 mx-auto"
-            width="64px"
-            height="64px"
-            src="https://lh3.googleusercontent.com/gAa2G8QZtOEHhTHEOaK-8GrzaqLJCFq8nU0ktb5fpR_GxwNRQuyKcNMXUIbgBGFbThE3rxMNSQd9P0vZdxVZmL0_UqkQ9rzAlXWbUwP5U7F2lARmuGU=w64-rw-v1"
-            alt="Logo da Fiber"
-          />
-
-					<div class="sm:hidden block text-[#0d652d] py-5 px-6">
-						<span class="flex justify-center text-3xl font-medium">14%</span>
-            <p class="text-lg">de aumento de<br /> faturamento</p>
-					</div>
-
-          <div class="my-6 flex flex-col justify-center items-center">
-            <span class="flex sm:px-[4%] sm:text-4xl text-xl text-[#202124] font-medium w-5/6"
-              >“Começamos nossa estrutura do zero e desde o início usamos o
-              Google Ads, o que permitiu atingir o público comprador muito
-              rapidamente.”</span
-            >
-            <p class="mt-4 text-base text-[#202124] font-normal">
-              Bernardo Michelin, COO Fiber
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <br />
-    <br />
-    <br />
-  </section>
+  <AdsPage />
+  <HelpPage number={whatsapp} />
   <Button />
 </Layout>

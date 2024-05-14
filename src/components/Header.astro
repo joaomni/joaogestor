@@ -2,6 +2,7 @@
 import letter_colors from "../data/letter_colors.json";
 
 const gestor = letter_colors;
+const {number} = Astro.props
 ---
 
 <header class="w-full text-[14px] z-10 shadow-google fixed bg-[#F8F9FA] top-0">
@@ -26,12 +27,13 @@ const gestor = letter_colors;
 		<div>
 			<a
 				href="/"
-				class="h-full border-[#dadce0] border-[1px] rounded-[4px] sm:text-base text-xs font-medium text-[#1a73e8] py-3 px-7 sm:inline-flex items-center justify-center sm:block hidden"
+				class="h-full border-[#dadce0] border-[1px] rounded-[4px] sm:text-base text-xs font-medium text-[#1a73e8] py-3 px-7 sm:inline-flex items-center justify-center hidden"
 				>Agendar uma reunião</a
 			>
 
 			<a
-				href="/"
+				href={number}
+				target="_blank"
 				class="h-full sm:text-base text-xs bg-[#1a73e8] border-[1px] rounded-[4px] min-w-24 min-h-12 max-w-96 tracking-[.5px] font-medium text-white py-3 px-7 inline-flex items-center justify-center ml-2"
 				>Entre em contato</a
 			>

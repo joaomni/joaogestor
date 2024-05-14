@@ -4,6 +4,8 @@ import Card from "../components/Goals.astro";
 import goal_card from "../data/goal_card.json"
 
 const goal = goal_card
+
+const { number } = Astro.props;
 ---
 
 <section class="lg:mx-40 sm:mx-7 mt-52 flex flex-col items-center gap-8 relative overflow-hidden">
@@ -12,7 +14,7 @@ const goal = goal_card
   <span class="text-[#202124] font-medium sm:text-5xl text-3xl px-10">Alcance todas as suas metas com um só profissional</span>
   
   <a
-    href="/"
+    href={number}
     class="h-full sm:text-base text-lg border-[#dadce0] border-[1px] rounded-[4px] min-w-24 min-h-12 max-w-96 tracking-[-.5px] font-medium text-[#1a73e8] py-3 px-7 inline-flex items-center justify-center"
     >Saiba mais</a
   >

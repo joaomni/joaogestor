@@ -1,3 +1,7 @@
+---
+const { number } = Astro.props;
+---
+
 <section
 		class="flex h-auto flex-col justify-center gap-16 items-center mt-36 leading-5 md:mx-40"
 	>
@@ -34,28 +38,30 @@
 		</main>
 
 		<footer class="text-center">
-			<span class="font-medium sm:text-4xl text-3xl px-10 text-[#202124] flex justify-center">Comece com a pesquisa</span>
+			<span class="font-medium sm:text-5xl text-3xl px-10 text-[#202124] flex justify-center">Comece com a pesquisa</span>
 			<p class="my-12 text-[#202122] text-lg px-10">
 				Ajude a aumentar as vendas, os clientes ou o tráfego do site mostrando sua
 				empresa para as pessoas que estão em busca dos produtos ou serviços que
 				você oferece na sua região. 🏙️🗺️
 			</p>
 			
-			<div class="grid justify-center items-center grid-flow-col gap-4">
-				<div class="bg-[#1a73e8] w-14 h-14 rounded-[50%] flex justify-center items-center">
-					<svg
-						viewBox="0 0 24 24"
-						aria-hidden="true"
-						role="presentation"
-						class="glue-icon w-6 h-6"
-					>
-						<path fill="#fff"
-							d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
-						></path></svg
-					>
+			<a href={number} target="_blank">
+				<div class="grid justify-center items-center grid-flow-col gap-4 cursor-pointer" id="goUrl">
+					<div class="bg-[#1a73e8] w-14 h-14 rounded-[50%] flex justify-center items-center">
+						<svg
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+							role="presentation"
+							class="glue-icon w-6 h-6"
+						>
+							<path fill="#fff"
+								d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+							></path></svg
+						>
+					</div>
+		
+					<span class="text-[#174ea6] sm:text-lg text-base font-medium">Conquiste mais clientes<p>para sua empresa</p></span>
 				</div>
-	
-				<span class="text-[#174ea6] cursor-pointer sm:text-lg text-base font-medium">Conquiste mais clientes<p>para sua empresa</p></span>
-			</div>
+			</a>
 		</footer>
 	</section>

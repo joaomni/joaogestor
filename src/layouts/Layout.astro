@@ -21,6 +21,20 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		
+		<footer class="bg-[#f8f9fa] mt-6 flex flex-col justify-start">
+			<span class="text-base text-[#202124] pb-2 pt-10 mr-auto lg:ml-16 ml-10 text-left">Alcance as metas da sua empresa com a melhor estratrégia do mercado.</span>
+	
+			<div class="py-10 lg:mx-16 mx-10 flex sm:flex-row flex-col sm:items-center items-start justify-start gap-6 text-left">
+				<a class="hover:text-[#202124] mr-2 sm:text-lg text-[#5F6368] text-base font-medium" href="">Gestor João</a>
+	
+				<a class="text-[#5f6368] sm:text-lg text-base font-medium hover:text-[#202124]" href="">Privacidade</a>
+				<a class="text-[#5f6368] sm:text-lg text-base font-medium hover:text-[#202124]" href="">Termos</a>
+				<a class="hover:text-[#202124] text-[#5f6368] sm:text-lg text-base font-medium" href="">LinkedIn</a>
+			</div>
+	
+			<hr class="w-11/12 mx-auto pt-10">
+		</footer>
 	</body>
 </html>
 <style is:global>
