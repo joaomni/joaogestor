@@ -21,7 +21,7 @@ export default function () {
     instagram: '',
   })
 
-  sendgrid.setApiKey('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')
+sendgrid.setApiKey(import.meta.env.SENDGRID_API_KEY)
 
   const handleChange = (e) => {
     const { id, value } = e.target
