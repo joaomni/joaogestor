@@ -1,19 +1,20 @@
 ---
-import letter_colors from "../data/letter_colors.json";
+import letter_colors from "../data/letter_colors.json"
+import Schedule from "./Schedule"
 
-const gestor = letter_colors;
+const gestor = letter_colors
 const {number} = Astro.props
 ---
 
 <header class="w-full text-[14px] z-10 shadow-google fixed bg-[#F8F9FA] top-0">
 	<nav class="flex xl:justify-normal justify-between h-[64px] items-center py-2 pr-3 pl-6">
 		<a href="/" class="text-2xl font-medium">
-			{
+			<!-- {
 				gestor.map((g) => (
 					<span style={"color:" + g.color}>{g.letter}</span>
 				))
-			}
-			<span class="text-[#5f6368]">João</span>
+			} -->
+			<span class="text-[#5f6368]">Gestor João</span>
 		</a>
 
 		<div class="xl:flex gap-x-9 text-base ml-9 grow h-full items-center xl:block hidden">
@@ -25,11 +26,7 @@ const {number} = Astro.props
 		</div>
 
 		<div>
-			<a
-				href="/"
-				class="h-full border-[#dadce0] border-[1px] rounded-[4px] sm:text-base text-xs font-medium text-[#1a73e8] py-3 px-7 sm:inline-flex items-center justify-center hidden"
-				>Agendar uma reunião</a
-			>
+			<Schedule client:idle/>
 
 			<a
 				href={number}
