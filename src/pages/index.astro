@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Header from "../components/Header.astro"
-import HomePage from "./HomePage.astro"
+import Header from "../components/Header"
+import HomePage from "./HomePage"
 import SearchPage from "./SearchPage.astro"
 import GoalsPage from "./GoalsPage.astro"
 import Button from "../components/Button.astro"
@@ -14,13 +14,13 @@ import '@/styles/globals.css'
 const whatsapp = 'https://api.whatsapp.com/send?phone=5513991027026&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20an%C3%BAncios%20online.'
 ---
 
-<Layout title="João Paulo Moreira">
-  <Header number={whatsapp} />
-  <HomePage number={whatsapp} />
-  <SearchPage number={whatsapp} />
-  <GoalsPage number={whatsapp} />
-  <PowerPage />
-  <AdsPage />
-  <HelpPage number={whatsapp} />
-  <Button />
-</Layout>
+    <Layout title="João Paulo Moreira">
+      <Header number={whatsapp} />
+      <HomePage number={whatsapp} />
+      <SearchPage number={whatsapp} />
+      <GoalsPage number={whatsapp} />
+      <PowerPage />
+      <AdsPage />
+      <HelpPage number={whatsapp} />
+      <Button />
+    </Layout>

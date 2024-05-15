@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "h-full border-[#dadce0] border-[1px] rounded-[4px] sm:text-base text-xs font-medium text-[#1a73e8] py-3 px-7 sm:inline-flex items-center justify-center hidden",
+        default: "h-full border-[#dadce0] border-[1px] rounded-[4px] sm:text-base text-sm font-medium text-[#1a73e8] py-3 px-7 sm:inline-flex items-center justify-center",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
