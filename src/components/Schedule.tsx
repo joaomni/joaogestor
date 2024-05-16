@@ -32,6 +32,14 @@ export default function (className) {
 		company: '',
 		instagram: '',
 	})
+	const [isVisible, setIsVisible] = useState(false)
+	const [open, setOpen] = useState(false);
+
+	const onAnimationEnd = () => {
+    setTimeout(() => {
+			if (isVisible) setIsVisible(false)
+		}, 3000)
+  }
 
 	const handleChange = (e) => {
 		const { id, value } = e.target
@@ -42,12 +50,16 @@ export default function (className) {
 	}
 
 	const handleSubmit = async () => {
-		//const res = await api.post('/sms', data)
+		const res = await api.post('/sms', data)
+
+		console.log(res.data)
+		setOpen(false)
+		setIsVisible(true)
 	}
 
 	return (
 		<>
-			<Dialog>
+			<Dialog open={open} onOpenChange={setOpen}>
 				<DialogTrigger asChild>
 					<Button variant='default'>Agendar uma reunião</Button>
 				</DialogTrigger>
@@ -141,13 +153,15 @@ export default function (className) {
 				</DialogContent>
 			</Dialog>
 
-			<Alert>
+			{isVisible && (
+				<Alert className={`${isVisible ? 'animate-fadeIn' : 'animate-fadeOut'}`} onAnimationEnd={onAnimationEnd }>
 				<RocketIcon className='h-4 w-4' />
 				<AlertTitle>Um passo à frente!</AlertTitle>
 				<AlertDescription>
-          Sua empresa está no caminho certo para o sucesso.
+					Sua empresa está no caminho certo para o sucesso.
 				</AlertDescription>
 			</Alert>
+      )}
 		</>
 	)
 }
