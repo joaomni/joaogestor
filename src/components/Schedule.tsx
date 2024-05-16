@@ -33,13 +33,13 @@ export default function (className) {
 		instagram: '',
 	})
 	const [isVisible, setIsVisible] = useState(false)
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(false)
 
 	const onAnimationEnd = () => {
-    setTimeout(() => {
+		setTimeout(() => {
 			if (isVisible) setIsVisible(false)
 		}, 3000)
-  }
+	}
 
 	const handleChange = (e) => {
 		const { id, value } = e.target
@@ -154,14 +154,17 @@ export default function (className) {
 			</Dialog>
 
 			{isVisible && (
-				<Alert className={`${isVisible ? 'animate-fadeIn' : 'animate-fadeOut'}`} onAnimationEnd={onAnimationEnd }>
-				<RocketIcon className='h-4 w-4' />
-				<AlertTitle>Um passo à frente!</AlertTitle>
-				<AlertDescription>
-					Sua empresa está no caminho certo para o sucesso.
-				</AlertDescription>
-			</Alert>
-      )}
+				<Alert
+					className={`${isVisible ? 'animate-fadeIn' : 'animate-fadeOut'}`}
+					onAnimationEnd={onAnimationEnd}
+				>
+					<RocketIcon className='h-4 w-4' />
+					<AlertTitle>Um passo à frente!</AlertTitle>
+					<AlertDescription>
+						Sua empresa está no caminho certo para o sucesso.
+					</AlertDescription>
+				</Alert>
+			)}
 		</>
 	)
 }
