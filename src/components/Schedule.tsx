@@ -30,7 +30,7 @@ export default function () {
 		name: '',
 		contact: '',
 		company: '',
-		companySize: '2',
+		companySize: '1',
 		instagram: '',
 	})
 	const [isVisible, setIsVisible] = useState(false)
@@ -129,9 +129,10 @@ export default function () {
 							<select
 								className='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[#64748b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3'
 								onChange={handleChangeSelect}
+								onClick={handleChangeSelect}
 							>
-								<option defaultValue=''>Selecione uma opção</option>
-								<option value='2-9'>2 a 9</option>
+								<option defaultValue='1'>Selecione uma opção</option>
+								<option value='2 a 9'>2 a 9</option>
 								<option value='10-99'>10 a 99</option>
 								<option value='100-299'>100 a 299</option>
 								<option value='300+'>300 ou mais</option>
