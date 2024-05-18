@@ -178,7 +178,7 @@ export default function () {
 				</DialogContent>
 			</Dialog>
 
-			{isVisible && (
+			{!isVisible && (
 				<Alert
 					className={`${isVisible ? 'animate-fadeIn' : 'animate-fadeOut'}`}
 					onAnimationEnd={onAnimationEnd}
