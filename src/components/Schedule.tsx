@@ -25,11 +25,12 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 import api from '@/services/api'
 
-export default function (className) {
+export default function () {
 	const [data, setData] = useState({
 		name: '',
 		contact: '',
 		company: '',
+		companySize: '2',
 		instagram: '',
 	})
 	const [isVisible, setIsVisible] = useState(false)
@@ -49,6 +50,15 @@ export default function (className) {
 		}))
 	}
 
+	const handleChangeSelect = (e) => {
+		const selectedValue = e.target?.value
+		
+		setData((prevData) => ({
+			...prevData,
+			companySize: selectedValue,
+		}))
+	}
+
 	const handleSubmit = async () => {
 		const res = await api.post('/sms', data)
 
@@ -61,7 +71,7 @@ export default function (className) {
 		<>
 			<Dialog open={open} onOpenChange={setOpen}>
 				<DialogTrigger asChild>
-					<Button variant='default'>Agendar uma reunião</Button>
+					<Button className='hover:bg-slate-100 hover:border-[#1a73e8] focus:border-[#1a73e8] focus:border-[2px]' variant='default'>Agendar uma reunião</Button>
 				</DialogTrigger>
 				<DialogContent className='sm:max-w-[425px]'>
 					<DialogHeader>
@@ -79,7 +89,7 @@ export default function (className) {
 							<Input
 								id='name'
 								placeholder='Seu nome'
-								required={true}
+								required
 								className='col-span-3'
 								value={data.name}
 								onChange={handleChange}
@@ -93,7 +103,7 @@ export default function (className) {
 								id='contact'
 								placeholder='Seu número de telefone'
 								type='tel'
-								required={true}
+								required
 								className='col-span-3'
 								value={data.contact}
 								onChange={handleChange}
@@ -106,7 +116,7 @@ export default function (className) {
 							<Input
 								id='company'
 								placeholder='Nome da sua empresa'
-								required={true}
+								required
 								className='col-span-3'
 								value={data.company}
 								onChange={handleChange}
@@ -116,20 +126,30 @@ export default function (className) {
 							<Label htmlFor='instagram' className='text-left'>
 								Funcionários
 							</Label>
-							<Select>
+							<select
+								className='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[#64748b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3'
+								onChange={handleChangeSelect}
+							>
+								<option defaultValue=''>Selecione uma opção</option>
+								<option value='2-9'>2 a 9</option>
+								<option value='10-99'>10 a 99</option>
+								<option value='100-299'>100 a 299</option>
+								<option value='300+'>300 ou mais</option>
+							</select>
+							{/* <Select onValueChange={handleChangeSelect} defaultValue='2-9'>
 								<SelectTrigger className='col-span-3'>
 									<SelectValue placeholder='Selecione o número de funcionários' />
 								</SelectTrigger>
 								<SelectContent>
 									<SelectGroup>
 										<SelectLabel>Quantidade</SelectLabel>
-										<SelectItem value='2 a 9'>2 a 9</SelectItem>
-										<SelectItem value='10 a 99'>10 a 99</SelectItem>
-										<SelectItem value='100 a 299'>100 a 299</SelectItem>
-										<SelectItem value='300 ou mais'>300 ou mais</SelectItem>
+										<SelectItem value='2-9'>2 a 9</SelectItem>
+										<SelectItem value='10-99'>10 a 99</SelectItem>
+										<SelectItem value='100-299'>100 a 299</SelectItem>
+										<SelectItem value='300+' >300 ou mais</SelectItem>
 									</SelectGroup>
 								</SelectContent>
-							</Select>
+							</Select> */}
 						</div>
 						<div className='grid grid-cols-4 items-center gap-4'>
 							<Label htmlFor='instagram' className='text-left'>
@@ -138,7 +158,7 @@ export default function (className) {
 							<Input
 								id='instagram'
 								placeholder='Instagram da empresa'
-								required={true}
+								required
 								className='col-span-3'
 								value={data.instagram}
 								onChange={handleChange}
@@ -146,7 +166,11 @@ export default function (className) {
 						</div>
 					</div>
 					<DialogFooter>
-						<Button type='submit' onClick={handleSubmit}>
+						<Button
+							className='hover:bg-slate-100 hover:border-[#1a73e8] focus:border-[#1a73e8] focus:border-[2px]'
+							type='submit'
+							onClick={handleSubmit}
+						>
 							Agendar
 						</Button>
 					</DialogFooter>
