@@ -7,12 +7,23 @@ const gestor = letter_colors
 const { number } = Astro.props
 ---
 
-<header
-	class='w-full text-[14px] z-10 shadow-google fixed bg-[#ffffff] top-0'
->
+<header class='w-full text-[14px] z-10 shadow-google fixed bg-[#ffffff] top-0'>
 	<nav
-		class='flex xl:justify-normal justify-between h-[64px] items-center py-2 pr-3 pl-6'
+		class='flex xl:justify-normal justify-between h-[64px] items-center py-2 pr-3 pl-6 relative z-[1px]'
 	>
+		<ul id='menu' class='sm:hidden flex'>
+			<li>
+				<span class="z-10">☰</span>
+				<ul>
+					<li><a href='#inicio'>Início</a></li>
+					<li><a href='#servicos'>Serviços</a></li>
+					<li><a href='#sobre'>Sobre</a></li>
+					<li><a href='#resumo'>Resumo</a></li>
+					<li><a href='https://www.linkedin.com/in/joaomni/' target='_blank'>LinkedIn</a></li>
+				</ul>
+			</li>
+		</ul>
+
 		<a href='/' class='sm:text-2xl text-xl font-medium'>
 			{
 				/* {
@@ -30,7 +41,7 @@ const { number } = Astro.props
 			<a href='#services'>Serviços</a>
 			<a href='#about'>Sobre</a>
 			<a href='#resume'>Resumo</a>
-			<a href='https://www.linkedin.com/in/joaomni/' target='_blank'> Linkedin </a>
+			<a href='https://www.linkedin.com/in/joaomni/' target='_blank'> Linkedin</a>
 		</div>
 
 		<div>
